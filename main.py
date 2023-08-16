@@ -1,4 +1,23 @@
 import telebot
+from fastapi import FastAPI
+
+
+app = FastAPI()
+
+
+@app.get("/")
+def hello_world():
+    return {
+        "message": "Hello World"
+    }
+
+
+@app.get("/test")
+def hello_world():
+    return {
+        "message": "这是测试用的接口"
+    }
+
 
 # 在 BotFather 那里获得你自己的 Telegram Bot API Token，并将其粘贴在此处
 TOKEN = '6102219812:AAFQGk0KiEIObTjmAjTISGqODsGBEy5qs9g'
